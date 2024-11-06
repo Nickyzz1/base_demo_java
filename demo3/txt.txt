@@ -1,0 +1,2 @@
+jdbc dowload
+pego o jdc_auth e coloco na pasta bin do java e na lib, vejos e a versão no pom bate com a versão que eu baixei
