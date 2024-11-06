@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -86,10 +87,10 @@ public class UserAccountController {
         return ResponseEntity.ok(users);
     }
 
-    @GetMapping("/delete") 
-    public ResponseEntity<String> delete() { // retorno dentro do ok do responseentity
+    @DeleteMapping("/deleteAll")
+    public ResponseEntity<String> deleteAllUsers() { 
         userService.deleteAll();
-        msg = "usuários deletados com sucesso";
+        msg = "Usuários deletados com sucesso";
         return ResponseEntity.ok(msg);
     }
     //http://localhost:8080/user/updatePass/nini/123@@123Ni/123/123

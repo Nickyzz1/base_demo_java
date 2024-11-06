@@ -31,6 +31,7 @@ public class SecurityConfiguration {
                 .requestMatchers("/user").permitAll() // esses end poits permiete que façam as ações semprecisar fazer login, vc escolhe quais end poinst nn precisam de autenticação
                 .requestMatchers("/user/login").permitAll() // quando testar colocar no permit all
                 .requestMatchers("/user/create").permitAll()
+                .requestMatchers("/user/deleteAll").permitAll()
                 .anyRequest().authenticated()
             )
             .addFilterBefore(new JWTAuthenticationFilter(jwtService), UsernamePasswordAuthenticationFilter.class) // tds os end points vão chamar isso, ele manda para essa classe
