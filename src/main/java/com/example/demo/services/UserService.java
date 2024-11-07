@@ -11,6 +11,7 @@ public interface UserService {
     List<UserModel> getAllUsers();
     List<UserModel> findByName(String name);
     List<UserModel> findByEmail(String email);
+    // métodos experimentais que não fazem pate do papel dessa interface
     void deleteAll();
     void updatePassByUserName(String userName, String newPass);
 }

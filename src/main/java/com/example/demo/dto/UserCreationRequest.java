@@ -1,5 +1,5 @@
 package com.example.demo.dto;
-
+// aqui eu monto a estrtura do json de requisição
 public class UserCreationRequest {
     private String userName;
     private String userPass;

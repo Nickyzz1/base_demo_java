@@ -1,4 +1,4 @@
-package com.example.demo.impl;
+package com.example.demo.services.impl;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import com.example.demo.repositories.UserRepositoy;
 import com.example.demo.services.UserService;
 
 @Service
-public class UserSeriveImpl implements UserService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepositoy userRepository;
@@ -29,13 +29,11 @@ public class UserSeriveImpl implements UserService {
 
     @Override
     public List<UserModel> findByName(String name) {
-        
         return userRepository.findByUserNameCol(name);
     }
 
     @Override
     public List<UserModel> findByEmail(String email) {
-        
         return userRepository.findByEmailCol(email);
     }
 

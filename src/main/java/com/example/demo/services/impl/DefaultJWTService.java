@@ -10,30 +10,22 @@ import com.example.demo.services.JWTService;
 
 import javax.crypto.SecretKey;
 
+import org.springframework.stereotype.Service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 // cria o tolken
+@Service
 public class DefaultJWTService implements JWTService<Token> {
     private final String SECRET_KEY = "ouqebfdouiebfouqewfnuoqewnhfouewnfouewnh";
     private final long EXPIRATION_TIME = 1000 * 60 * 60; // 1 hora
 
     @Override
-    public String get(Token token) { // crfia o tolken O método get(Token token) cria um JWT com base nas informações do token fornecido, como o id e o role (papel do usuário).
+    public String get(Token token) { // cria o tolken O método get(Token token) cria um JWT com base nas informações do token fornecido, como o id e o role (papel do usuário).
         var claims = new HashMap<String, Object>();
         
-        claims.put("id", token.getId()); // Ao adicionar o id e o role aos claims do JWT, você está garantindo que essas informações importantes (como a identidade do usuário e seu papel) estarão disponíveis para serem acessadas sempre que o token for utilizado.
-
-        // Essas informações podem ser usadas em diferentes partes do sistema para:
-        
-        // Autenticar o usuário (verificando se o token é válido e se ele contém o id correto).
-        // Autorização (verificando se o usuário tem o papel adequado para acessar um recurso).
-
-//         Aqui, o código está adicionando uma chave chamada "id" aos claims do token.
-// O valor dessa chave é o ID do usuário (obtido através de token.getId()).
-// O ID pode ser um identificador único para o usuário no banco de dados ou no sistema.
-
+        claims.put("id", token.getId()); 
 
         claims.put("role", token.getRole());
 
@@ -82,3 +74,14 @@ public class DefaultJWTService implements JWTService<Token> {
         return new HashMap<>(claims);
     }
 }
+
+// Ao adicionar o id e o role aos claims do JWT, você está garantindo que essas informações importantes (como a identidade do usuário e seu papel) estarão disponíveis para serem acessadas sempre que o token for utilizado.
+
+        // Essas informações podem ser usadas em diferentes partes do sistema para:
+        
+        // Autenticar o usuário (verificando se o token é válido e se ele contém o id correto).
+        // Autorização (verificando se o usuário tem o papel adequado para acessar um recurso).
+
+        //         Aqui, o código está adicionando uma chave chamada "id" aos claims do token.
+        // O valor dessa chave é o ID do usuário (obtido através de token.getId()).
+        // O ID pode ser um identificador único para o usuário no banco de dados ou no sistema.

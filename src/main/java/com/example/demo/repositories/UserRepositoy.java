@@ -23,7 +23,8 @@ public interface UserRepositoy extends JpaRepository<UserModel, Long> {
     @Query("UPDATE UserModel u SET u.passWordCol = :newPass WHERE u.userNameCol = :userName")
     // @Query("UPDATE UserModel u SET u.passWordCol = :newPass WHERE u.userNameCol = :userName or u.emailCol = :userName")
     void updatePassWordColByUserName(@Param("userName") String userName, @Param("newPass") String newPass); // o nome do parâmetro precisa ser o mesmo nome da query
-
-
+    // query personlizada
+    @Query("SELECT u FROM UserModel u WHERE u.userNameCol = :loginValue OR u.emailCol = :loginValue")
+    List<UserModel> findByUserNameColAndEmailCol(@Param("loginValue") String loginValue);
 
 }

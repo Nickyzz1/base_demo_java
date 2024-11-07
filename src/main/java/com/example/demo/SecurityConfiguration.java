@@ -29,7 +29,8 @@ public class SecurityConfiguration {
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(authorize -> authorize
                 .requestMatchers("/user").permitAll() // esses end poits permiete que façam as ações semprecisar fazer login, vc escolhe quais end poinst nn precisam de autenticação
-                .requestMatchers("/user/login").permitAll() // quando testar colocar no permit all
+                // .requestMatchers("/**").permitAll()
+                .requestMatchers("/login").permitAll() // quando testar colocar no permit all
                 .requestMatchers("/user/create").permitAll()
                 .requestMatchers("/user/deleteAll").permitAll()
                 .anyRequest().authenticated()

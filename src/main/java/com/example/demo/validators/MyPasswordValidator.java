@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.validators;
 
 public class MyPasswordValidator {
     public static boolean Validate(String pass) 
