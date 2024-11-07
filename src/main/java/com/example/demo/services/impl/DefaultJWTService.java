@@ -37,7 +37,8 @@ public class DefaultJWTService implements JWTService<Token> {
         try
         {
             var map = validateJwt(jwt);
-
+            // Ao adicionar o id e o role aos claims do JWT, você está garantindo que essas informações importantes (como a identidade do usuário e seu papel) estarão disponíveis para serem acessadas sempre que o token for utilizado.
+            
             Token token = new Token();
             token.setId(Long.parseLong(map.get("id").toString()));
             token.setRole(map.get("role").toString());
@@ -75,7 +76,6 @@ public class DefaultJWTService implements JWTService<Token> {
     }
 }
 
-// Ao adicionar o id e o role aos claims do JWT, você está garantindo que essas informações importantes (como a identidade do usuário e seu papel) estarão disponíveis para serem acessadas sempre que o token for utilizado.
 
         // Essas informações podem ser usadas em diferentes partes do sistema para:
         

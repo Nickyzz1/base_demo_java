@@ -1,2 +1,34 @@
 jdbc dowload
 pego o jdc_auth e coloco na pasta bin do java e na lib, vejos e a versão no pom bate com a versão que eu baixei
+
+
+400 Bad Request: A requisição enviada pelo cliente está incorreta ou malformada, por exemplo, devido a dados inválidos ou formato de JSON incorreto.
+
+401 Unauthorized: O cliente não forneceu autenticação ou o token enviado é inválido. Normalmente, significa que o acesso ao recurso requer autenticação.
+
+403 Forbidden: O cliente está autenticado, mas não tem permissão para acessar o recurso. Por exemplo, o usuário não possui os privilégios necessários.
+
+404 Not Found: O recurso solicitado não foi encontrado no servidor. Pode ser causado por uma URL incorreta ou recurso que não existe.
+
+405 Method Not Allowed: O método HTTP (GET, POST, etc.) usado não é permitido para o endpoint solicitado.
+
+409 Conflict: Indica que há um conflito no processamento da requisição. É comum em tentativas de criar um recurso que já existe.
+
+415 Unsupported Media Type: O servidor não suporta o tipo de mídia enviado pelo cliente. Geralmente, ocorre quando o cliente envia um conteúdo com tipo MIME não suportado.
+
+422 Unprocessable Entity: A requisição está corretamente formatada, mas não pode ser processada, como ao enviar dados que violam alguma regra de validação do servidor.
+
+429 Too Many Requests: O cliente enviou muitas requisições em um curto período de tempo, ultrapassando os limites estabelecidos (rate limiting).
+
+Códigos de Erro 5xx - Erros do Servidor
+500 Internal Server Error: Um erro genérico para problemas inesperados no servidor. Pode ser causado por exceções não tratadas ou falhas de configuração.
+
+501 Not Implemented: O servidor não possui a funcionalidade necessária para processar o método HTTP da requisição.
+
+502 Bad Gateway: O servidor atuou como um gateway ou proxy e recebeu uma resposta inválida do servidor upstream (o servidor com o qual tenta se comunicar).
+
+503 Service Unavailable: O servidor está temporariamente indisponível, geralmente por sobrecarga ou manutenção.
+
+504 Gateway Timeout: O servidor, atuando como gateway ou proxy, não recebeu uma resposta a tempo do servidor upstream.
+
+505 HTTP Version Not Supported: O servidor não suporta a versão do protocolo HTTP usada na requisição.
